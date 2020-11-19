@@ -1,0 +1,252 @@
+check_skilllevel = {
+click = function(player, npc)
+	local t={graphic=convertGraphic(npc.look,"monster"),color=npc.lookColor}
+		player.npcGraphic=t.graphic
+		player.npcColor=t.color
+		player.dialogType = 0
+
+	local skillMenu1 = player:menuString("Which skills would you like to check?", {"Gathering", "Crafting"})
+
+	if (skillMenu1 == "Gathering") then
+		local pMinerB = player.registry["miner"]
+		local pShearerB = player.registry["shearer"]
+		local pForesterB = player.registry["forester"]
+		if (pMinerB == 0) then			
+			percentMiner = "N/A"
+		elseif (pMinerB >= 1 and pMinerB < 25) then
+			mathMiner = math.floor(((pMinerB-1)/(25-1))*100)
+			percentMiner = ""..mathMiner.."% into Apt I."
+		elseif (pMinerB >= 25 and pMinerB < 220) then
+			mathMiner = math.floor(((pMinerB-25)/(220-25))*100)
+			percentMiner = ""..mathMiner.."% into Apt II."
+		elseif (pMinerB >= 220 and pMinerB < 840) then
+			mathMiner = math.floor(((pMinerB-220)/(840-220))*100)
+			percentMiner = ""..mathMiner.."% into Apt III."
+		elseif (pMinerB >= 840 and pMinerB < 2200) then
+			mathMiner = math.floor(((pMinerB-840)/(2200-840))*100)
+			percentMiner = ""..mathMiner.."% into Apt IV."
+		elseif (pMinerB >= 2200 and pMinerB < 6400) then
+			mathMiner = math.floor(((pMinerB-2200)/(6400-2200))*100)
+			percentMiner = ""..mathMiner.."% into Apt V."
+		elseif (pMinerB >= 6400 and pMinerB < 18000) then
+			mathMiner = math.floor(((pMinerB-6400)/(18000-6400))*100)
+			percentMiner = ""..mathMiner.."% into Apt VI."
+		elseif (pMinerB >= 18000 and pMinerB < 50000) then
+			mathMiner = math.floor(((pMinerB-18000)/(50000-18000))*100)
+			percentMiner = ""..mathMiner.."% into Apt VII."
+		elseif (pMinerB >= 50000 and pMinerB < 124000) then
+			mathMiner = math.floor(((pMinerB-50000)/(124000-50000))*100)
+			percentMiner = ""..mathMiner.."% into Apt VIII."
+		elseif (pMinerB >= 124000 and pMinerB < 237000) then
+			mathMiner = math.floor(((pMinerB-124000)/(237000-124000))*100)
+			percentMiner = ""..mathMiner.."% into Apt IX."
+		elseif (pMinerB >= 237000 and pMinerB < 400000) then
+			mathMiner = math.floor(((pMinerB-237000)/(400000-237000))*100)
+			percentMiner = ""..mathMiner.."% into Apt X."
+		elseif (pMinerB >= 400000 and pMinerB < 680000) then
+			mathMiner = math.floor(((pMinerB-400000)/(680000-400000))*100)
+			percentMiner = ""..mathMiner.."% into Apt XI."
+		elseif (pMinerB >= 680000) then
+			percentMiner = "You're already a Master."
+		end
+		if (pShearerB == 0) then			
+			percentShearer = "N/A"
+		elseif (pShearerB >= 1 and pShearerB < 25) then
+			mathShearer = math.floor(((pShearerB-1)/(25-1))*100)
+			percentShearer = ""..mathShearer.."% into Apt I."
+		elseif (pShearerB >= 25 and pShearerB < 220) then
+			mathShearer = math.floor(((pShearerB-25)/(220-25))*100)
+			percentShearer = ""..mathShearer.."% into Apt II."
+		elseif (pShearerB >= 220 and pShearerB < 840) then
+			mathShearer = math.floor(((pShearerB-220)/(840-220))*100)
+			percentShearer = ""..mathShearer.."% into Apt III."
+		elseif (pShearerB >= 840 and pShearerB < 2200) then
+			mathShearer = math.floor(((pShearerB-840)/(2200-840))*100)
+			percentShearer = ""..mathShearer.."% into Apt IV."
+		elseif (pShearerB >= 2200 and pShearerB < 6400) then
+			mathShearer = math.floor(((pShearerB-2200)/(6400-2200))*100)
+			percentShearer = ""..mathShearer.."% into Apt V."
+		elseif (pShearerB >= 6400 and pShearerB < 18000) then
+			mathShearer = math.floor(((pShearerB-6400)/(18000-6400))*100)
+			percentShearer = ""..mathShearer.."% into Apt VI."
+		elseif (pShearerB >= 18000 and pShearerB < 50000) then
+			mathShearer = math.floor(((pShearerB-18000)/(50000-18000))*100)
+			percentShearer = ""..mathShearer.."% into Apt VII."
+		elseif (pShearerB >= 50000 and pShearerB < 124000) then
+			mathShearer = math.floor(((pShearerB-50000)/(124000-50000))*100)
+			percentShearer = ""..mathShearer.."% into Apt VIII."
+		elseif (pShearerB >= 124000 and pShearerB < 237000) then
+			mathShearer = math.floor(((pShearerB-124000)/(237000-124000))*100)
+			percentShearer = ""..mathShearer.."% into Apt IX."
+		elseif (pShearerB >= 237000 and pShearerB < 400000) then
+			mathShearer = math.floor(((pShearerB-237000)/(400000-237000))*100)
+			percentShearer = ""..mathShearer.."% into Apt X."
+		elseif (pShearerB >= 400000 and pShearerB < 680000) then
+			mathShearer = math.floor(((pShearerB-400000)/(680000-400000))*100)
+			percentShearer = ""..mathShearer.."% into Apt XI."
+		elseif (pShearerB >= 680000) then
+			percentShearer = "You're already a Master."
+		end
+		if (pForesterB == 0) then			
+			percentForester = "N/A"
+		elseif (pForesterB >= 1 and pForesterB < 25) then
+			mathForester = math.floor(((pForesterB-1)/(25-1))*100)
+			percentForester = ""..mathForester.."% into Apt I."
+		elseif (pForesterB >= 25 and pForesterB < 220) then
+			mathForester = math.floor(((pForesterB-25)/(220-25))*100)
+			percentForester = ""..mathForester.."% into Apt II."
+		elseif (pForesterB >= 220 and pForesterB < 840) then
+			mathForester = math.floor(((pForesterB-220)/(840-220))*100)
+			percentForester = ""..mathForester.."% into Apt III."
+		elseif (pForesterB >= 840 and pForesterB < 2200) then
+			mathForester = math.floor(((pForesterB-840)/(2200-840))*100)
+			percentForester = ""..mathForester.."% into Apt IV."
+		elseif (pForesterB >= 2200 and pForesterB < 6400) then
+			mathForester = math.floor(((pForesterB-2200)/(6400-2200))*100)
+			percentForester = ""..mathForester.."% into Apt V."
+		elseif (pForesterB >= 6400 and pForesterB < 18000) then
+			mathForester = math.floor(((pForesterB-6400)/(18000-6400))*100)
+			percentForester = ""..mathForester.."% into Apt VI."
+		elseif (pForesterB >= 18000 and pForesterB < 50000) then
+			mathForester = math.floor(((pForesterB-18000)/(50000-18000))*100)
+			percentForester = ""..mathForester.."% into Apt VII."
+		elseif (pForesterB >= 50000 and pForesterB < 124000) then
+			mathForester = math.floor(((pForesterB-50000)/(124000-50000))*100)
+			percentForester = ""..mathForester.."% into Apt VIII."
+		elseif (pForesterB >= 124000 and pForesterB < 237000) then
+			mathForester = math.floor(((pForesterB-124000)/(237000-124000))*100)
+			percentForester = ""..mathForester.."% into Apt IX."
+		elseif (pForesterB >= 237000 and pForesterB < 400000) then
+			mathForester = math.floor(((pForesterB-237000)/(400000-237000))*100)
+			percentForester = ""..mathForester.."% into Apt X."
+		elseif (pForesterB >= 400000 and pForesterB < 680000) then
+			mathForester = math.floor(((pForesterB-400000)/(680000-400000))*100)
+			percentForester = ""..mathForester.."% into Apt XI."
+		elseif (pForesterB >= 680000) then
+			percentForester = "You're already a Master."
+		end
+		player:msg(8, "------------ Skill Levels ------------ \n\n  Mining ----- "..percentMiner.."\n  Shearing --- "..percentShearer.."\n  Forester --- "..percentForester.."\n", player.ID)
+	elseif (skillMenu1 == "Crafting") then
+		local pSmithB = player.registry["smithing_skill"]
+		local pTailorB = player.registry["tailoring_skill"]
+		local pCarpenterB = player.registry["carpentry_skill"]
+		if (pSmithB == 0) then			
+			percentSmith = "N/A"
+		elseif (pSmithB >= 1 and pSmithB < 25) then
+			mathSmith = math.floor(((pSmithB-1)/(25-1))*100)
+			percentSmith = ""..mathSmith.."% into Apt I."
+		elseif (pSmithB >= 25 and pSmithB < 220) then
+			mathSmith = math.floor(((pSmithB-25)/(220-25))*100)
+			percentSmith = ""..mathSmith.."% into Apt II."
+		elseif (pSmithB >= 220 and pSmithB < 840) then
+			mathSmith = math.floor(((pSmithB-220)/(840-220))*100)
+			percentSmith = ""..mathSmith.."% into Apt III."
+		elseif (pSmithB >= 840 and pSmithB < 2200) then
+			mathSmith = math.floor(((pSmithB-840)/(2200-840))*100)
+			percentSmith = ""..mathSmith.."% into Apt IV."
+		elseif (pSmithB >= 2200 and pSmithB < 6400) then
+			mathSmith = math.floor(((pSmithB-2200)/(6400-2200))*100)
+			percentSmith = ""..mathSmith.."% into Apt V."
+		elseif (pSmithB >= 6400 and pSmithB < 18000) then
+			mathSmith = math.floor(((pSmithB-6400)/(18000-6400))*100)
+			percentSmith = ""..mathSmith.."% into Apt VI."
+		elseif (pSmithB >= 18000 and pSmithB < 50000) then
+			mathSmith = math.floor(((pSmithB-18000)/(50000-18000))*100)
+			percentSmith = ""..mathSmith.."% into Apt VII."
+		elseif (pSmithB >= 50000 and pSmithB < 124000) then
+			mathSmith = math.floor(((pSmithB-50000)/(124000-50000))*100)
+			percentSmith = ""..mathSmith.."% into Apt VIII."
+		elseif (pSmithB >= 124000 and pSmithB < 237000) then
+			mathSmith = math.floor(((pSmithB-124000)/(237000-124000))*100)
+			percentSmith = ""..mathSmith.."% into Apt IX."
+		elseif (pSmithB >= 237000 and pSmithB < 400000) then
+			mathSmith = math.floor(((pSmithB-237000)/(400000-237000))*100)
+			percentSmith = ""..mathSmith.."% into Apt X."
+		elseif (pSmithB >= 400000 and pSmithB < 680000) then
+			mathSmith = math.floor(((pSmithB-400000)/(680000-400000))*100)
+			percentSmith = ""..mathSmith.."% into Apt XI."
+		elseif (pSmithB >= 680000) then
+			percentSmith = "You're already a Master."
+		end
+		if (pTailorB == 0) then			
+			percentTailor = "N/A"
+		elseif (pTailorB >= 1 and pTailorB < 25) then
+			mathTailor = math.floor(((pTailorB-1)/(25-1))*100)
+			percentTailor = ""..mathTailor.."% into Apt I."
+		elseif (pTailorB >= 25 and pTailorB < 220) then
+			mathTailor = math.floor(((pTailorB-25)/(220-25))*100)
+			percentTailor = ""..mathTailor.."% into Apt II."
+		elseif (pTailorB >= 220 and pTailorB < 840) then
+			mathTailor = math.floor(((pTailorB-220)/(840-220))*100)
+			percentTailor = ""..mathTailor.."% into Apt III."
+		elseif (pTailorB >= 840 and pTailorB < 2200) then
+			mathTailor = math.floor(((pTailorB-840)/(2200-840))*100)
+			percentTailor = ""..mathTailor.."% into Apt IV."
+		elseif (pTailorB >= 2200 and pTailorB < 6400) then
+			mathTailor = math.floor(((pTailorB-2200)/(6400-2200))*100)
+			percentTailor = ""..mathTailor.."% into Apt V."
+		elseif (pTailorB >= 6400 and pTailorB < 18000) then
+			mathTailor = math.floor(((pTailorB-6400)/(18000-6400))*100)
+			percentTailor = ""..mathTailor.."% into Apt VI."
+		elseif (pTailorB >= 18000 and pTailorB < 50000) then
+			mathTailor = math.floor(((pTailorB-18000)/(50000-18000))*100)
+			percentTailor = ""..mathTailor.."% into Apt VII."
+		elseif (pTailorB >= 50000 and pTailorB < 124000) then
+			mathTailor = math.floor(((pTailorB-50000)/(124000-50000))*100)
+			percentTailor = ""..mathTailor.."% into Apt VIII."
+		elseif (pTailorB >= 124000 and pTailorB < 237000) then
+			mathTailor = math.floor(((pTailorB-124000)/(237000-124000))*100)
+			percentTailor = ""..mathTailor.."% into Apt IX."
+		elseif (pTailorB >= 237000 and pTailorB < 400000) then
+			mathTailor = math.floor(((pTailorB-237000)/(400000-237000))*100)
+			percentTailor = ""..mathTailor.."% into Apt X."
+		elseif (pTailorB >= 400000 and pTailorB < 680000) then
+			mathTailor = math.floor(((pTailorB-400000)/(680000-400000))*100)
+			percentTailor = ""..mathTailor.."% into Apt XI."
+		elseif (pTailorB >= 680000) then
+			percentTailor = "You're already a Master."
+		end
+		if (pCarpenterB == 0) then			
+			percentCarpenter = "N/A"
+		elseif (pCarpenterB >= 1 and pCarpenterB < 25) then
+			mathCarpenter = math.floor(((pCarpenterB-1)/(25-1))*100)
+			percentCarpenter = ""..mathCarpenter.."% into Apt I."
+		elseif (pCarpenterB >= 25 and pCarpenterB < 220) then
+			mathCarpenter = math.floor(((pCarpenterB-25)/(220-25))*100)
+			percentCarpenter = ""..mathCarpenter.."% into Apt II."
+		elseif (pCarpenterB >= 220 and pCarpenterB < 840) then
+			mathCarpenter = math.floor(((pCarpenterB-220)/(840-220))*100)
+			percentCarpenter = ""..mathCarpenter.."% into Apt III."
+		elseif (pCarpenterB >= 840 and pCarpenterB < 2200) then
+			mathCarpenter = math.floor(((pCarpenterB-840)/(2200-840))*100)
+			percentCarpenter = ""..mathCarpenter.."% into Apt IV."
+		elseif (pCarpenterB >= 2200 and pCarpenterB < 6400) then
+			mathCarpenter = math.floor(((pCarpenterB-2200)/(6400-2200))*100)
+			percentCarpenter = ""..mathCarpenter.."% into Apt V."
+		elseif (pCarpenterB >= 6400 and pCarpenterB < 18000) then
+			mathCarpenter = math.floor(((pCarpenterB-6400)/(18000-6400))*100)
+			percentCarpenter = ""..mathCarpenter.."% into Apt VI."
+		elseif (pCarpenterB >= 18000 and pCarpenterB < 50000) then
+			mathCarpenter = math.floor(((pCarpenterB-18000)/(50000-18000))*100)
+			percentCarpenter = ""..mathCarpenter.."% into Apt VII."
+		elseif (pCarpenterB >= 50000 and pCarpenterB < 124000) then
+			mathCarpenter = math.floor(((pCarpenterB-50000)/(124000-50000))*100)
+			percentCarpenter = ""..mathCarpenter.."% into Apt VIII."
+		elseif (pCarpenterB >= 124000 and pCarpenterB < 237000) then
+			mathCarpenter = math.floor(((pCarpenterB-124000)/(237000-124000))*100)
+			percentCarpenter = ""..mathCarpenter.."% into Apt IX."
+		elseif (pCarpenterB >= 237000 and pCarpenterB < 400000) then
+			mathCarpenter = math.floor(((pCarpenterB-237000)/(400000-237000))*100)
+			percentCarpenter = ""..mathCarpenter.."% into Apt X."
+		elseif (pCarpenterB >= 400000 and pCarpenterB < 680000) then
+			mathCarpenter = math.floor(((pCarpenterB-400000)/(680000-400000))*100)
+			percentCarpenter = ""..mathCarpenter.."% into Apt XI."
+		elseif (pCarpenterB >= 680000) then
+			percentCarpenter = "You're already a Master."
+		end
+		player:msg(8, "------------ Skill Levels ------------ \n\n  Smithing --- "..percentSmith.."\n  Tailoring -- "..percentTailor.."\n  Carpentry -- "..percentCarpenter.."", player.ID)
+	end
+
+end
+
+} 

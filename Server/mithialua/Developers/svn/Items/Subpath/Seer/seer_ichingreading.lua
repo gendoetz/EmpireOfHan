@@ -1,0 +1,78 @@
+seer_ichingreading = {
+use = async(function(player)
+
+	local npcA = {graphic = convertGraphic(1653, "item"), color = 0}
+
+	local hexagrams = {}
+		hexagrams[1] = "Ch'ien - The Creative.\nHeaven over Heaven.\n\nPersistent effort will help you realize your potential for achievement."
+		hexagrams[2] = "K'un - The Receptive.\nEarth over Earth.\n\nBe receptive to words of advice or influence from those who are worthy of respect. This is a sign of strength, not weakness."
+		hexagrams[3] = "Chun - Problems At The Beginning.\nWater over Thunder.\n\nThe first step towards true learning is acknowledging your inexperience."
+		hexagrams[4] = "Meng - Youthful Folly.\nMountain over Water.\n\nPatience and kindness are the keys to learning and teaching."
+		hexagrams[5] = "Hsu - Waiting, Nourishment.\nWater over Heaven.\n\nDo not doubt that the wait is necessary."
+		hexagrams[6] = "Sung - Inability to communicate. Conflict.\nHeaven over Water.\n\nAntagonism and hostility will increase with the space we create between ourselves."
+		hexagrams[7] = "Shih - Integrity and resolution.\nEarth over Water.\n\nTrust is the key to true leadership."
+		hexagrams[8] = "Pi - Union.\nWater over Earth.\n\nA community bound by goodwill is the most potent force for powerful positive change there is."
+		hexagrams[9] = "Hsiao Ch'u - Attention to detail.\nWind over Heaven.\n\nWhen great changes are not possible then small changes should be undertaken."
+		hexagrams[10] = "Lu - Correct conduct.\nHeaven over Pond.\n\nA successful journey can be assured if one careful step at a time is taken."
+		hexagrams[11] = "T'ai - Peace and tranquility.\nEarth over Heaven.\n\nAlthough times are harmonious you should not take them for granted. Try to understand why the harmony is there."
+		hexagrams[12] = "P'i - Stagnation.\nHeaven over Earth.\n\nAlthough this is a time of adversity you should remember that all things change and there is always hope."
+		hexagrams[13] = "T'ung Jen - Fellowship.\nHeaven over Fire.\n\nYou can achieve strength in numbers by dispelling mistrust."
+		hexagrams[14] = "Ta Yu - Abundance.\nFire over Heaven.\n\nThose who understand the responsibility that comes with wealth are the ones best fitted to maintain it."
+		hexagrams[15] = "Ch'ien - Humility.\nEarth over Mountain.\n\nArrogance is the mortal enemy of true greatness."
+		hexagrams[16] = "Yu - Enthusiasm\nThunder over Earth\n\nRevitalize your spirit through celebration"
+		hexagrams[17] = "Sui - Following\nPond over Thunder.\n\nBalancing the heart and mind of leadership will help assure steady progress."
+		hexagrams[18] = "Ku - Restoration.\nMountain over Wind.\n\nThe problems of the past should be addressed so that the future can be approached with confidence."
+		hexagrams[19] = "Lin - Approach.\nEarth over Pond.\n\nTo make steady progress and advancement you need to learn to recognize favorable opportunities."
+		hexagrams[20] = "Kuan - Observation.\nWind over Earth.\n\nRemaining alert to all that affects you and those around you will help you to understand your role in the world."
+		hexagrams[21] = "Shih Ho - Biting through.\nFire over thunder.\n\nWithout justice harmony is unattainable."
+		hexagrams[22] = "Pi - Grace.\nMountain over Fire.\n\nValuing beauty will enable you to cultivate your taste for harmony in all aspects of your life."
+		hexagrams[23] = "Po - Splitting apart.\nMountain over Earth.\n\nBefore beginning a new enterprise you should wait for the collapse of the old one."
+		hexagrams[24] = "Fu - Turning point.\nEarth over Thunder.\n\nIf matters are progressing and showing steady improvement then there is no need to push them."
+		hexagrams[25] = "Wu Wang - Innocence\nHeaven over Thunder.\n\nTo function most effectively you must be fully present in each and every moment."
+		hexagrams[26] = "Ta Ch'u - The taming power of the great.\nMountain over Heaven.\n\nWisdom and resources accumulated in a disciplined manner will help you in all future endeavors."
+		hexagrams[27] = "I - Nourishment.\nMountain over Thunder.\n\nSpiritual discrimination is as important as physical discrimination."
+		hexagrams[28] = "Ta Kuo - The preponderance of the great.\nPond over Wind.\n\nStaying alert and then intervening in a timely fashion will help forestall many difficulties."
+		hexagrams[29] = "K'an - The abyss.\nWater over Water.\n\nOnly when you learn from danger will you triumph over it."
+		hexagrams[30] = "Li - Brilliance.\nFire over Fire.\n\nTending the 'fires' of your mind and spirit will help illuminate your path."
+		hexagrams[31] = "Hsien - Courtship\nPond over Mountain.\n\nSuccess is assured when attraction is strengthened by mutual respect and support."
+		hexagrams[32] = "Heng - Constancy\nThunder over Wind\n\nTrue persistence is a process of constant renewal."
+		hexagrams[33] = "Tun - Retreat.\nHeaven over Mountain.\n\nIt is not an admission of defeat to retreat from an unequal fight."
+		hexagrams[34] = "Ta Chuang - The power of the great.\nThunder over Heaven.\n\nTo win an advantage you not only need increase your strength but to accompany it with responsible action."
+		hexagrams[35] = "Chin - Progress.\nFire over Earth.\n\nAn easily won victory should not be taken for granted or treated lightly."
+		hexagrams[36] = "Ming I - The darkening of the light.\n Earth over Fire.\n\nConcealing your light when danger is around is an effective way of avoiding detection."
+		hexagrams[37] = "Chia Jen - The family.\nWind over Fire.\n\nOpen and respectful communication is the key to making a team work successfully."
+		hexagrams[38] = "K'uei - Opposition.\nFire over Pond.\n\nReconciliation must be a key priority if there is disunity."
+		hexagrams[39] = "Chien - Obstruction\nWater over Mountain.\n\nIf outward progress is currently impossible then concentrate on cultivation your inner strengths."
+		hexagrams[40] = "Hsieh - Deliverance.\nThunder over Water.\n\nDiscard any millstones you may be carrying. Bitterness, grievance and recrimination will only hold you back."
+		hexagrams[41] = "Sun - Decrease.\nMountain over Pond.\n\nMake sure you use use your resources appropriately apportioned or instability will result."
+		hexagrams[42] = "I - Increase.\nWind over Thunder.\n\nWhen accompanied by generosity abundance will endure."
+		hexagrams[43] = "Kuai - Breakthrough.\nPond over Heaven.\n\nWhen the unscrupulous reveal their weaknesses be ready to act."
+		hexagrams[44] = "Kou - Coming to meet.\nHeaven over Wind.\n\nPernicious influences must be resisted the moment you become aware of them."
+		hexagrams[45] = "Ts'ui - Gathering together.\nPond over Earth.\n\nSocial harmony is a prerequisite for prosperous times."
+		hexagrams[46] = "Sheng - Pushing upward.\nEarth over Wind.\n\nEverything must come to pass in its own time at its own speed."
+		hexagrams[47] = "K'un - Exhaustion.\nPond over Water.\n\nYour most valuable asset will be a sense of purpose."
+		hexagrams[48] = "Ching - The well.\nWater over Wind.\n\nEven though times change the spirit has constant needs."
+		hexagrams[49] = "Ko - Revolution.\nPond over Fire.\n\nOnly when justified by necessity and clear intent should radical change be undertaken."
+		hexagrams[50] = "Ting - The cauldron.\nFire over Wind.\n\nThe nourishment of body, mind and spirit is the key to a harmonious existence."
+		hexagrams[51] = "Chen - The arousing.\nThunder over Thunder.\n\nDon't object to the storm that is needed to clear the air. It is a necessity."
+		hexagrams[52] = "Ken - Keeping still.\nMountain over Mountain.\n\nAny and all effective action must be born out of stillness."
+		hexagrams[53] = "Chien - Gradual progress.\nWind over Mountain.\n\nIt is only possible to perfect every detail of advancement when progress is steady and patient."
+		hexagrams[54] = "Kuei Mei - The marrying maiden.\nThunder over Pond.\n\nA sense of perspective is the best way to cure disappointment."
+		hexagrams[55] = "Feng - Abundance.\nThunder over Fire.\n\nMake sure you provide for the future even though you are at the peak of success."
+		hexagrams[56] = "Lu - The wanderer.\nFire over Mountain.\n\nYou will travel best when your journey is a quest rather than a holiday or an escape."
+		hexagrams[57] = "Sun - The gentle.\nWind over Wind.\n\nAlthough rapid change may be effected by force, enduring change is best effected by gentle persistence."
+		hexagrams[58] = "Tui - Joy.\nPond over Pond.\n\nNothing inspires human spirit more than bliss."
+		hexagrams[59] = "Huan - Dispersion.\nWind over Water.\n\n In order to advance you will need to eliminate the causes of disharmony."
+		hexagrams[60] = "Chieh - Limitation.\nWater over Pond.\n\nAlthough your potential is limitless, your capabilities are not."
+		hexagrams[61] = "Chung Fu - Inner truth.\nWind over Pond.\n\nTo have a deep influence on others you must have a thorough understanding of them."
+		hexagrams[62] = "Hsaio Kuo - The preponderance of the small.\nThunder over Mountain.\n\nAn accumulation of small victories is the best way to achieve greatness at this time."
+		hexagrams[63] = "Chi Chi - After completion.\nWater over Fire.\n\nEvery triumph brings new challenges."
+		hexagrams[64] = "Wei Chi - Before completion.\nFire over Water.\n\nYou will need to be especially vigilant in the last few yards to success."
+	local pickHexagram = math.random(#hexagrams)
+	local Reading = hexagrams[pickHexagram]
+
+	player:dialogSeq({npcA, ""..Reading..""}, 0)	
+
+end),
+
+}

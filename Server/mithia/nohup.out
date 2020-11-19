@@ -1,0 +1,58 @@
+[SQL]: DB error - MySQL server has gone away
+[2JMithia - Revision Unknown
+Login IP: 198.211.104.128
+../mithiamaps/Accepted/warps.txt
+Configuration File (conf/map.conf) reading finished!
+Configuration File (conf/inter.conf) reading finished!
+Configuration File (conf/char.conf) reading finished!
+Language File (conf/lang.conf) reading finished!
+5 Guides Loaded
+Map data file reading finished. 291 map loaded!
+NPC script read done. Total 151 NPC read!
+Loaded warps!
+Item db read done. 943 item loaded!
+Recipe DB read done. 0 recipes loaded!
+Monster db read done. 242 monsters loaded!
+Monster spawn read done. 5776 monsters spawned!
+Magic db read done. 272 magic loaded!
+Class db read done. 16 classes loaded!
+Loaded bank slots for clan Han
+Loaded bank slots for clan Imperial Legion
+Loaded bank slots for clan Immortals
+Loaded bank slots for clan ??
+Clan db read done. 3 clans loaded!
+Board db read done. 25 boards loaded!
+ Board ID: 0 - Mail
+ Board ID: 1 - General Discussion
+ Board ID: 2 - Dreamweaver
+ Board ID: 3 - Laws
+ Board ID: 4 - Bugs/Issues
+ Board ID: 5 - Events
+ Board ID: 6 - Buy
+ Board ID: 7 - Sell
+ Board ID: 80 - Imperial Legion
+ Board ID: 81 - Immortals
+ Board ID: 150 - Magistratus
+ Board ID: 270 - Arena Information
+ Board ID: 290 - GM Knowledge
+old pause: 200
+old mult: 200
+Loaded 1 game registries
+Mithia Map Server is [1;32mready[0m! Listening at 2126.
+Attempt to connect to char-server...
+Connected to Char Server.
+84
+GM(August) set to stealth.
+84
+GM(Cosmos) set to stealth.
+[Debug]: at pc.c:466 - SELECT `ParItmId` FROM `Parcels` WHERE `ParChaIdDestination`='145'
+[SQL]: DB error - MySQL server has gone away
+[Debug]: at mob.c:770 - INSERT INTO `NPCDeathDropLogs` (`NddNpcId`, `NddMapId`, `NddX`, `NddY`, `NddItmId`, `NddAmount`) VALUES ('98', '77', '38', '71', '416', '1')
+[SQL]: DB error - MySQL server has gone away
+[Debug]: at clif.c:7601 - INSERT INTO `SpellLogs` (`SlgChaId`, `SlgSplId`, `SlgMapId`, `SlgX`, `SlgY`, `SlgType`) VALUES ('145', '3006', '110', '9', '30', 'Target')
+[SQL]: DB error - MySQL server has gone away
+[Debug]: at pc.c:455 - SELECT `MalNew` FROM `Mail` WHERE `MalNew` = 1 AND `MalChaNameDestination` = 'Tata'
+[SQL]: DB error - MySQL server has gone away
+[Debug]: at clif.c:7701 - SELECT `SctValue` FROM `SpellCasts` WHERE `SctChaId` = '145' AND `SctSplId` = '3006'
+[SQL]: DB error - Attempt to read a row while there is no result set associated with the statement
+*** Error in `./map-server': free(): invalid pointer: 0xb7405450 ***
